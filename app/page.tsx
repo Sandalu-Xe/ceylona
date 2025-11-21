@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center text-foreground overflow-hidden relative">
+    <main className="flex min-h-screen flex-col items-center justify-center text-foreground overflow-hidden relative pt-20">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
