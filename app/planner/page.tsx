@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+import { useSearchParams } from "next/navigation";
 
 // Dynamically import Leaflet map to avoid SSR issues
 const LeafletMap = dynamic(() => import("@/components/map/leaflet-map"), {
@@ -26,6 +27,44 @@ export default function PlannerPage() {
         interests: [] as string[],
         travelers: "",
     });
+
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PlannerContent
+                step={step}
+                setStep={setStep}
+                viewState={viewState}
+                setViewState={setViewState}
+                preferences={preferences}
+                setPreferences={setPreferences}
+            />
+        </Suspense>
+    );
+}
+
+function PlannerContent({ step, setStep, viewState, setViewState, preferences, setPreferences }: any) {
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const theme = searchParams.get("theme");
+        if (theme) {
+            const interestMap: Record<string, string> = {
+                adventure: "Hiking",
+                cultural: "Culture",
+                wildlife: "Wildlife",
+                beach: "Beaches",
+            };
+            const interest = interestMap[theme];
+            if (interest && !preferences.interests.includes(interest)) {
+                setPreferences((prev: any) => ({
+                    ...prev,
+                    interests: [...prev.interests, interest]
+                }));
+                // Auto-advance to step 2 if theme is present
+                setStep(2);
+            }
+        }
+    }, [searchParams]);
 
     const handleNext = () => {
         setStep(step + 1);
@@ -65,7 +104,7 @@ export default function PlannerPage() {
                                     className="w-full p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                                     placeholder="e.g., 7"
                                     value={preferences.duration}
-                                    onChange={(e) => setPreferences({ ...preferences, duration: e.target.value })}
+                                    onChange={(e: any) => setPreferences({ ...preferences, duration: e.target.value })}
                                 />
                             </motion.div>
                         )}
@@ -79,7 +118,7 @@ export default function PlannerPage() {
                                             key={interest}
                                             onClick={() => {
                                                 const newInterests = preferences.interests.includes(interest)
-                                                    ? preferences.interests.filter(i => i !== interest)
+                                                    ? preferences.interests.filter((i: string) => i !== interest)
                                                     : [...preferences.interests, interest];
                                                 setPreferences({ ...preferences, interests: newInterests });
                                             }}
