@@ -45,7 +45,7 @@ export default function Navbar() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [cartTotal] = useState(0);
     const [cartCount] = useState(0);
-    const { theme, setTheme } = useTheme();
+    const { resolvedTheme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
 
     // Avoid hydration mismatch
@@ -161,11 +161,11 @@ export default function Navbar() {
 
                         {/* Theme Toggle */}
                         <button
-                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                            onClick={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
                             className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
                             aria-label="Toggle Theme"
                         >
-                            {mounted && (theme === 'dark' ? (
+                            {mounted && (resolvedTheme === 'dark' ? (
                                 <Sun className="w-5 h-5" />
                             ) : (
                                 <Moon className="w-5 h-5" />

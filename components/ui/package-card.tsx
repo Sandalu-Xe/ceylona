@@ -63,7 +63,7 @@ export function PackageCard({ title, description, price, image, slug, className 
                     transform,
                 }}
                 className={cn(
-                    "relative h-[500px] w-full rounded-xl bg-white dark:bg-neutral-900 cursor-pointer",
+                    "relative h-[500px] w-full rounded-xl bg-white dark:bg-white/5 cursor-pointer",
                     className
                 )}
             >

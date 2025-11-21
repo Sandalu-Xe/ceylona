@@ -31,7 +31,7 @@ export default function ProductCarousel({
     };
 
     return (
-        <section className="py-16 bg-gray-50 dark:bg-background">
+        <section className="py-16 bg-white dark:bg-neutral-950 transition-colors duration-300">
             <div className="max-w-7xl mx-auto px-6">
                 {/* Section Header */}
                 <div className="text-center mb-12">

@@ -186,18 +186,18 @@ export default function Home() {
 
       {/* Call to Action Section */}
       {/* Adventure Section */}
-      <section className="relative bg-black text-white py-24 overflow-hidden">
+      <section className="relative bg-white dark:bg-black text-neutral-900 dark:text-white py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-8 z-10">
             <h2 className="text-5xl md:text-7xl font-bold leading-tight">
               READY FOR YOUR NEXT<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">ADVENTURE?</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-neutral-900 to-neutral-500 dark:from-white dark:to-gray-500">ADVENTURE?</span>
             </h2>
-            <p className="text-xl text-gray-400 max-w-md">
+            <p className="text-xl text-neutral-600 dark:text-gray-400 max-w-md">
               Browse our store and gear up for your next journey. Your adventure begins here.
             </p>
             <Link href="/products">
-              <button className="px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-200 transition-all transform hover:scale-105">
+              <button className="px-8 py-4 bg-black text-white dark:bg-white dark:text-black rounded-full font-bold text-lg hover:bg-neutral-800 dark:hover:bg-gray-200 transition-all transform hover:scale-105">
                 SHOP NOW
               </button>
             </Link>

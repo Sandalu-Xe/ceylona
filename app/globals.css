@@ -25,18 +25,7 @@
   /* Custom utilities for glassmorphism if needed, though we can use backdrop-blur */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark mode - Deep Charcoal */
-    --background: #121212;
-    --foreground: #F8F9FA;
-    --primary: #2E8B57;
-    --accent: #FFD700;
-    --muted: #2A2A2A;
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --glass-bg: rgba(0, 0, 0, 0.2);
-  }
-}
+
 
 .dark {
   /* Dark mode - Deep Charcoal */

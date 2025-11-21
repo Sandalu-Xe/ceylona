@@ -45,7 +45,7 @@ export default function PlannerPage() {
     return (
         <main className="flex h-screen w-full bg-background overflow-hidden">
             {/* Left Panel - AI Planner Wizard */}
-            <div className="w-full md:w-1/3 z-10 bg-background/80 backdrop-blur-xl border-r border-white/10 p-8 flex flex-col justify-center relative shadow-2xl">
+            <div className="w-full md:w-1/3 z-10 bg-background/80 backdrop-blur-xl border-r border-black/10 dark:border-white/10 p-8 flex flex-col justify-center relative shadow-2xl">
                 <div className="max-w-md mx-auto w-full space-y-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -62,7 +62,7 @@ export default function PlannerPage() {
                                 <label className="block text-sm font-medium">How many days?</label>
                                 <input
                                     type="number"
-                                    className="w-full p-4 rounded-xl bg-white/5 border border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                    className="w-full p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                                     placeholder="e.g., 7"
                                     value={preferences.duration}
                                     onChange={(e) => setPreferences({ ...preferences, duration: e.target.value })}
@@ -83,7 +83,7 @@ export default function PlannerPage() {
                                                     : [...preferences.interests, interest];
                                                 setPreferences({ ...preferences, interests: newInterests });
                                             }}
-                                            className={`px-4 py-2 rounded-full text-sm transition-all ${preferences.interests.includes(interest) ? 'bg-primary text-white' : 'bg-white/5 hover:bg-white/10'}`}
+                                            className={`px-4 py-2 rounded-full text-sm transition-all ${preferences.interests.includes(interest) ? 'bg-primary text-white' : 'bg-black/5 dark:bg-white/5 hover:bg-black/10 dark:hover:bg-white/10'}`}
                                         >
                                             {interest}
                                         </button>
