@@ -153,7 +153,7 @@ export default function PackageDetail() {
                     </section>
 
                     <section>
-                        <h2 className="text-3xl font-bold mb-4">What's Included</h2>
+                        <h2 className="text-3xl font-bold mb-4">What&apos;s Included</h2>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {pkg.features.map((feature, idx) => (
                                 <li key={idx} className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
@@ -209,7 +209,7 @@ export default function PackageDetail() {
                             Book Now
                         </button>
                         <p className="text-xs text-center text-muted-foreground mt-4">
-                            No payment required today. We'll contact you to finalize details.
+                            No payment required today. We&apos;ll contact you to finalize details.
                         </p>
                     </div>
                 </div>

@@ -185,19 +185,60 @@ export default function Home() {
       </ProductCarousel>
 
       {/* Call to Action Section */}
-      <section className="py-20 bg-gradient-to-br from-green-600 to-green-800 text-white">
-        <div className="max-w-4xl mx-auto text-center px-6">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready for Your Adventure?
-          </h2>
-          <p className="text-xl mb-8 text-white/90">
-            Let us create a personalized journey through Sri Lanka's most breathtaking destinations.
-          </p>
-          <Link href="/planner">
-            <button className="px-10 py-4 bg-white text-green-800 rounded-full font-bold text-lg hover:bg-gray-100 transition-all shadow-xl hover:shadow-2xl transform hover:scale-105">
-              Start Planning Now
-            </button>
-          </Link>
+      {/* Adventure Section */}
+      <section className="relative bg-black text-white py-24 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="space-y-8 z-10">
+            <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+              READY FOR YOUR NEXT<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">ADVENTURE?</span>
+            </h2>
+            <p className="text-xl text-gray-400 max-w-md">
+              Browse our store and gear up for your next journey. Your adventure begins here.
+            </p>
+            <Link href="/products">
+              <button className="px-8 py-4 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-200 transition-all transform hover:scale-105">
+                SHOP NOW
+              </button>
+            </Link>
+          </div>
+          <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden">
+            <Image
+              src="/images/safari.png"
+              alt="Adventure"
+              fill
+              className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Explore Section */}
+      <section className="relative bg-white text-black py-24">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden order-2 md:order-1">
+            <Image
+              src="/images/tea.png"
+              alt="Explore"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+          <div className="space-y-8 order-1 md:order-2 flex flex-col justify-center">
+            <h2 className="text-5xl md:text-7xl font-bold leading-tight">
+              Explore the<br />
+              Great Outdoors<br />
+              in Style
+            </h2>
+            <div className="flex items-center gap-4">
+              <p className="text-lg text-gray-600">Discover our premium collection</p>
+              <Link href="/experiences">
+                <button className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </main>

@@ -42,8 +42,8 @@ const navItems: NavItem[] = [
 export default function Navbar() {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
-    const [cartTotal, setCartTotal] = useState(0);
-    const [cartCount, setCartCount] = useState(0);
+    const [cartTotal] = useState(0);
+    const [cartCount] = useState(0);
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-white/10">
