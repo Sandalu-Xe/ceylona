@@ -2,8 +2,9 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
-import { Search, ShoppingCart, ChevronDown } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Search, ShoppingCart, ChevronDown, Sun, Moon } from 'lucide-react';
+import { useTheme } from 'next-themes';
 
 interface NavItem {
     label: string;
@@ -44,6 +45,13 @@ export default function Navbar() {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [cartTotal] = useState(0);
     const [cartCount] = useState(0);
+    const { theme, setTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    // Avoid hydration mismatch
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     return (
         <nav className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-md border-b border-white/10">
@@ -150,6 +158,19 @@ export default function Navbar() {
                                 )}
                             </div>
                         </Link>
+
+                        {/* Theme Toggle */}
+                        <button
+                            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                            className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+                            aria-label="Toggle Theme"
+                        >
+                            {mounted && (theme === 'dark' ? (
+                                <Sun className="w-5 h-5" />
+                            ) : (
+                                <Moon className="w-5 h-5" />
+                            ))}
+                        </button>
 
                         {/* Mobile Menu Button */}
                         <button className="lg:hidden text-white/90 hover:text-white">
