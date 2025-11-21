@@ -1,8 +1,9 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
 :root {
   /* Light mode - Alabaster */
-  --background: #F8F9FA;
+  --background: #ffffff;
   --foreground: #121212;
   --primary: #1A5D1A;
   /* Ceylona Green */
