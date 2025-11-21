@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+:root {
+  /* Light mode - Alabaster */
+  --background: #F8F9FA;
+  --foreground: #121212;
+  --primary: #1A5D1A;
+  /* Ceylona Green */
+  --accent: #FFC107;
+  /* Golden Hour Yellow */
+  --muted: #E5E7EB;
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-bg: rgba(255, 255, 255, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Custom utilities for glassmorphism if needed, though we can use backdrop-blur */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark mode - Deep Charcoal */
+    --background: #121212;
+    --foreground: #F8F9FA;
+    --primary: #2E8B57;
+    --accent: #FFD700;
+    --muted: #2A2A2A;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-bg: rgba(0, 0, 0, 0.2);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility for glassmorphism */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+}
