@@ -63,7 +63,7 @@ export function PackageCard({ title, description, price, image, slug, className 
                     transform,
                 }}
                 className={cn(
-                    "relative h-[500px] w-full rounded-xl bg-white dark:bg-white/5 cursor-pointer",
+                    "relative h-[400px] md:h-[500px] w-full rounded-xl bg-white dark:bg-white/5 cursor-pointer",
                     className
                 )}
             >
@@ -85,7 +85,7 @@ export function PackageCard({ title, description, price, image, slug, className 
                     </div>
 
                     <div className="relative z-10 p-6 flex flex-col h-full justify-end text-white">
-                        <h3 className="text-3xl font-bold drop-shadow-md translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                        <h3 className="text-2xl md:text-3xl font-bold drop-shadow-md translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                             {title}
                         </h3>
                         <p className="mt-2 text-white/90 drop-shadow-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">

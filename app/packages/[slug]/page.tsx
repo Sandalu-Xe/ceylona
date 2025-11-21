@@ -133,7 +133,7 @@ export default function PackageDetail() {
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-5xl md:text-7xl font-bold text-white mb-2"
+                            className="text-4xl md:text-7xl font-bold text-white mb-2"
                         >
                             {pkg.title}
                         </motion.h1>
@@ -154,7 +154,7 @@ export default function PackageDetail() {
 
                     <section>
                         <h2 className="text-3xl font-bold mb-4">What&apos;s Included</h2>
-                        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <ul className="grid grid-cols-1 gap-4">
                             {pkg.features.map((feature, idx) => (
                                 <li key={idx} className="flex items-center gap-3 p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10">
                                     <span className="text-primary">✓</span>
@@ -166,7 +166,7 @@ export default function PackageDetail() {
 
                     <section>
                         <h2 className="text-3xl font-bold mb-4">Gallery</h2>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {pkg.gallery.map((img, idx) => (
                                 <div key={idx} className="relative h-48 rounded-xl overflow-hidden">
                                     <Image src={img} alt="Gallery" fill className="object-cover hover:scale-105 transition-transform duration-500" />

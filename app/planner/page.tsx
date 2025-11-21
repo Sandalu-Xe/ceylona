@@ -43,9 +43,9 @@ export default function PlannerPage() {
     };
 
     return (
-        <main className="flex h-screen w-full bg-background overflow-hidden">
+        <main className="flex flex-col md:flex-row h-screen w-full bg-background overflow-hidden">
             {/* Left Panel - AI Planner Wizard */}
-            <div className="w-full md:w-1/3 z-10 bg-background/80 backdrop-blur-xl border-r border-black/10 dark:border-white/10 p-8 flex flex-col justify-center relative shadow-2xl">
+            <div className="w-full md:w-1/3 h-1/2 md:h-full z-10 bg-background/80 backdrop-blur-xl border-b md:border-r border-black/10 dark:border-white/10 p-6 md:p-8 flex flex-col justify-center relative shadow-2xl overflow-y-auto">
                 <div className="max-w-md mx-auto w-full space-y-8">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -112,7 +112,7 @@ export default function PlannerPage() {
             </div>
 
             {/* Right Panel - Leaflet Map */}
-            <div className="absolute inset-0 md:relative md:w-2/3 h-full bg-neutral-900">
+            <div className="relative w-full md:w-2/3 h-1/2 md:h-full bg-neutral-900">
                 <LeafletMap center={viewState.center} zoom={viewState.zoom} />
 
                 {/* Map Overlay Gradient */}

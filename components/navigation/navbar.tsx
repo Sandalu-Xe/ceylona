@@ -43,6 +43,7 @@ const navItems: NavItem[] = [
 export default function Navbar() {
     const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [cartTotal] = useState(0);
     const [cartCount] = useState(0);
     const { resolvedTheme, setTheme } = useTheme();
@@ -173,22 +174,55 @@ export default function Navbar() {
                         </button>
 
                         {/* Mobile Menu Button */}
-                        <button className="lg:hidden text-white/90 hover:text-white">
-                            <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                viewBox="0 0 24 24"
-                                stroke="currentColor"
-                            >
-                                <path d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
+                        <button
+                            className="lg:hidden text-white/90 hover:text-white z-50 relative"
+                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                        >
+                            {isMobileMenuOpen ? (
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                            ) : (
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+                            )}
                         </button>
                     </div>
                 </div>
             </div>
+
+            {/* Mobile Menu Overlay */}
+            {isMobileMenuOpen && (
+                <div className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl lg:hidden flex flex-col items-center justify-center space-y-8 animate-in fade-in duration-200">
+                    {navItems.map((item) => (
+                        <div key={item.label} className="flex flex-col items-center space-y-4">
+                            <Link
+                                href={item.href}
+                                className="text-2xl font-bold text-white hover:text-primary transition-colors"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                                {item.label}
+                            </Link>
+                            {item.hasDropdown && (
+                                <div className="flex flex-col items-center space-y-2">
+                                    {item.dropdownItems?.map((subItem) => (
+                                        <Link
+                                            key={subItem.label}
+                                            href={subItem.href}
+                                            className="text-lg text-white/60 hover:text-white transition-colors"
+                                            onClick={() => setIsMobileMenuOpen(false)}
+                                        >
+                                            {subItem.label}
+                                        </Link>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                    <Link href="/planner" onClick={() => setIsMobileMenuOpen(false)}>
+                        <button className="px-8 py-3 bg-white text-black rounded-full font-bold text-lg hover:bg-gray-200 transition-all">
+                            Plan My Trip
+                        </button>
+                    </Link>
+                </div>
+            )}
         </nav>
     );
 }
