@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 import { Search, ShoppingCart, ChevronDown } from 'lucide-react';
 
@@ -49,12 +50,18 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center space-x-2 group">
-                        <div className="w-10 h-10 bg-white rounded-md flex items-center justify-center transition-transform group-hover:scale-105">
-                            <span className="text-black font-bold text-xl">C</span>
+                    <Link href="/" className="flex items-center space-x-3 group">
+                        <div className="relative w-12 h-12 transition-transform group-hover:scale-105">
+                            <Image
+                                src="/images/ceylona-logo.png"
+                                alt="Ceylona Camps"
+                                fill
+                                className="object-contain"
+                                priority
+                            />
                         </div>
                         <span className="text-white font-semibold text-lg hidden sm:block">
-                            Ceylona
+                            CEYLONA
                         </span>
                     </Link>
 
