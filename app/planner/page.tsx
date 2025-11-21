@@ -1,68 +1,44 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import mapboxgl from "mapbox-gl";
-import "mapbox-gl/dist/mapbox-gl.css";
+import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 
-// Note: You should replace this with your actual Mapbox access token in a .env.local file
-// NEXT_PUBLIC_MAPBOX_TOKEN=pk.eyJ1Ij...
-const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN || "";
+// Dynamically import Leaflet map to avoid SSR issues
+const LeafletMap = dynamic(() => import("@/components/map/leaflet-map"), {
+    ssr: false,
+    loading: () => (
+        <div className="h-full w-full flex items-center justify-center bg-neutral-900 text-white">
+            Loading Map...
+        </div>
+    ),
+});
 
 export default function PlannerPage() {
-    const mapContainer = useRef<HTMLDivElement>(null);
-    const map = useRef<mapboxgl.Map | null>(null);
     const [step, setStep] = useState(1);
+    const [viewState, setViewState] = useState({
+        center: [7.8731, 80.7718] as [number, number], // Sri Lanka center
+        zoom: 7.5,
+    });
+
     const [preferences, setPreferences] = useState({
         duration: "",
         interests: [] as string[],
         travelers: "",
     });
 
-    useEffect(() => {
-        if (map.current) return; // initialize map only once
-        if (!mapContainer.current) return;
-
-        // Default to a public token if not provided, but this will likely fail without a real one.
-        // We'll handle the error gracefully or show a placeholder.
-        mapboxgl.accessToken = MAPBOX_TOKEN;
-
-        try {
-            map.current = new mapboxgl.Map({
-                container: mapContainer.current,
-                style: "mapbox://styles/mapbox/satellite-streets-v12", // 3D satellite view
-                center: [80.7718, 7.8731], // Sri Lanka center
-                zoom: 7.5,
-                pitch: 45, // 3D pitch
-                bearing: 0,
-                projection: 'globe'
-            });
-
-            map.current.on('style.load', () => {
-                map.current?.setFog({
-                    color: 'rgb(186, 210, 235)', // Lower atmosphere
-                    'high-color': 'rgb(36, 92, 223)', // Upper atmosphere
-                    'horizon-blend': 0.02, // Atmosphere thickness (default 0.2 at low zooms)
-                    'space-color': 'rgb(11, 11, 25)', // Background color
-                    'star-intensity': 0.6 // Background star brightness (default 0.35 at low zooms )
-                });
-            });
-        } catch (e) {
-            console.error("Mapbox initialization failed. Check your API token.", e);
-        }
-    }, []);
-
     const handleNext = () => {
         setStep(step + 1);
         // Simulate map movement for "Traveller Plane" concept
-        if (map.current) {
-            if (step === 1) {
-                map.current.flyTo({ center: [79.8612, 6.9271], zoom: 12, speed: 0.8, curve: 1 }); // Colombo
-            } else if (step === 2) {
-                map.current.flyTo({ center: [80.6337, 7.2906], zoom: 12, speed: 0.8, curve: 1 }); // Kandy
-            } else if (step === 3) {
-                map.current.flyTo({ center: [81.5244, 6.3716], zoom: 11, speed: 0.8, curve: 1 }); // Yala
-            }
+        if (step === 1) {
+            // Fly to Colombo
+            setViewState({ center: [6.9271, 79.8612], zoom: 12 });
+        } else if (step === 2) {
+            // Fly to Kandy
+            setViewState({ center: [7.2906, 80.6337], zoom: 13 });
+        } else if (step === 3) {
+            // Fly to Yala
+            setViewState({ center: [6.3716, 81.5244], zoom: 11 });
         }
     };
 
@@ -135,12 +111,12 @@ export default function PlannerPage() {
                 </div>
             </div>
 
-            {/* Right Panel - 3D Map */}
+            {/* Right Panel - Leaflet Map */}
             <div className="absolute inset-0 md:relative md:w-2/3 h-full bg-neutral-900">
-                <div ref={mapContainer} className="h-full w-full" />
+                <LeafletMap center={viewState.center} zoom={viewState.zoom} />
 
                 {/* Map Overlay Gradient */}
-                <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-background via-transparent to-transparent z-0" />
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-r from-background via-transparent to-transparent z-10" />
             </div>
         </main>
     );
