@@ -156,7 +156,7 @@ export default function PackageDetail() {
                         <h2 className="text-3xl font-bold mb-4">What&apos;s Included</h2>
                         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {pkg.features.map((feature, idx) => (
-                                <li key={idx} className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+                                <li key={idx} className="flex items-center gap-3 p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10">
                                     <span className="text-primary">✓</span>
                                     {feature}
                                 </li>
@@ -178,7 +178,7 @@ export default function PackageDetail() {
 
                 {/* Booking Sidebar */}
                 <div className="relative">
-                    <div className="sticky top-8 p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md shadow-xl">
+                    <div className="sticky top-8 p-6 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-xl">
                         <div className="flex justify-between items-end mb-6">
                             <div>
                                 <p className="text-sm text-muted-foreground">Starting from</p>
@@ -192,11 +192,11 @@ export default function PackageDetail() {
                         <div className="space-y-4 mb-6">
                             <div className="space-y-2">
                                 <label className="text-sm font-medium">Travel Dates</label>
-                                <input type="date" className="w-full p-3 rounded-lg bg-white/10 border border-white/10 focus:border-primary outline-none" />
+                                <input type="date" className="w-full p-3 rounded-lg bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 focus:border-primary outline-none" />
                             </div>
                             <div className="space-y-2">
                                 <label className="text-sm font-medium">Guests</label>
-                                <select className="w-full p-3 rounded-lg bg-white/10 border border-white/10 focus:border-primary outline-none">
+                                <select className="w-full p-3 rounded-lg bg-black/5 dark:bg-white/10 border border-black/10 dark:border-white/10 focus:border-primary outline-none">
                                     <option>1 Guest</option>
                                     <option>2 Guests</option>
                                     <option>3 Guests</option>

@@ -111,7 +111,7 @@ const travelExperiences = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-background text-foreground">
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Background Image */}
@@ -214,7 +214,7 @@ export default function Home() {
       </section>
 
       {/* Explore Section */}
-      <section className="relative bg-white text-black py-24">
+      <section className="relative bg-background text-foreground py-24">
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="relative h-[400px] md:h-[600px] w-full rounded-2xl overflow-hidden order-2 md:order-1">
             <Image
@@ -233,7 +233,7 @@ export default function Home() {
             <div className="flex items-center gap-4">
               <p className="text-lg text-gray-600">Discover our premium collection</p>
               <Link href="/experiences">
-                <button className="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-colors shadow-lg">
+                <button className="w-12 h-12 bg-foreground text-background rounded-full flex items-center justify-center hover:opacity-90 transition-colors shadow-lg">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </button>
               </Link>

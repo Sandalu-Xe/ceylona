@@ -28,7 +28,7 @@ export default function ProductCard({
 
     return (
         <div
-            className="group relative bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
+            className="group relative bg-white dark:bg-white/5 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -77,12 +77,12 @@ export default function ProductCard({
             {/* Product Info */}
             <div className="p-4 text-center">
                 <Link href={href}>
-                    <h3 className="text-sm font-medium text-gray-800 mb-2 hover:text-blue-600 transition-colors line-clamp-2">
+                    <h3 className="text-sm font-medium text-gray-800 dark:text-gray-200 mb-2 hover:text-blue-600 transition-colors line-clamp-2">
                         {name}
                     </h3>
                 </Link>
                 <div className="flex items-center justify-center space-x-2">
-                    <span className="text-lg font-bold text-gray-900">
+                    <span className="text-lg font-bold text-gray-900 dark:text-white">
                         රු{price.toLocaleString('en-US', { minimumFractionDigits: 2 })}
                     </span>
                     {originalPrice && (
