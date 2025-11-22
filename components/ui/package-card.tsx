@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 interface PackageCardProps {
     title: string;
-    description: string;
+    description?: string;
     price: string;
     image: string;
     slug: string;
@@ -72,7 +72,7 @@ export function PackageCard({ title, description, price, image, slug, className 
                         transform: "translateZ(75px)",
                         transformStyle: "preserve-3d",
                     }}
-                    className="absolute inset-4 grid place-content-center rounded-xl shadow-lg"
+                    className="absolute inset-4 rounded-xl shadow-lg"
                 >
                     <div className="absolute inset-0 overflow-hidden rounded-xl">
                         <Image
@@ -81,10 +81,10 @@ export function PackageCard({ title, description, price, image, slug, className 
                             fill
                             className="object-cover"
                         />
-                        <div className="absolute inset-0 bg-black/20" />
+                        <div className="absolute inset-0 bg-black/50 group-hover:bg-black/0 transition-colors duration-500" />
                     </div>
 
-                    <div className="relative z-10 p-6 flex flex-col h-full justify-end text-white">
+                    <div className="relative z-10 p-6 flex flex-col h-full justify-end text-white text-left items-start">
                         <h3 className="text-2xl md:text-3xl font-bold drop-shadow-md translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                             {title}
                         </h3>
