@@ -6,19 +6,19 @@ export default function AboutPage() {
         {
             title: "Our Story",
             description: "The journey that started it all.",
-            image: "/images/experiences/sigiriya.jpg",
+            image: "/images/heritage.png",
             href: "/about/story",
         },
         {
             title: "Meet the Team",
             description: "The experts behind your experience.",
-            image: "/images/tea.png",
+            image: "/images/safari.png",
             href: "/about/team",
         },
         {
             title: "Get in Touch",
             description: "Start planning your adventure.",
-            image: "/images/hero-bg.png",
+            image: "/images/colombo.png",
             href: "/about/contact",
         },
     ];
