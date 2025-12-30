@@ -1,7 +1,7 @@
 export default function ContactPage() {
     return (
-        <main className="min-h-screen bg-background pt-24 pb-16 px-6">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <main className="min-h-screen bg-background flex items-center justify-center pt-24 pb-16 px-6">
+            <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 {/* Contact Info */}
                 <div className="space-y-12">
                     <div className="space-y-4">

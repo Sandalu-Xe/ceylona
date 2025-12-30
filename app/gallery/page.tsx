@@ -38,13 +38,12 @@ export default function GalleryPage() {
                     {galleryImages.map((column, colIndex) => (
                         <div key={colIndex} className="flex flex-col gap-6">
                             {column.map((image, imgIndex) => (
-                                <div key={imgIndex} className="relative group overflow-hidden rounded-2xl">
+                                <div key={imgIndex} className="relative group overflow-hidden rounded-2xl aspect-square">
                                     <Image
                                         src={image.src}
                                         alt={image.alt}
-                                        width={600}
-                                        height={800} // Aspect ratio approximation, actual display is handled by css class
-                                        className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-110"
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                                         <span className="text-white text-lg font-medium px-4 py-2 border border-white/30 rounded-full backdrop-blur-sm">
