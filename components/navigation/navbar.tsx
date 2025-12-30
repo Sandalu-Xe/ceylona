@@ -160,7 +160,7 @@ export default function Navbar() {
                             className="flex items-center space-x-3 text-white/90 hover:text-white transition-colors group"
                         >
                             <span className="text-sm font-medium">
-                                รු{cartTotal.toFixed(2)}
+                                ${cartTotal.toFixed(2)}
                             </span>
                             <div className="relative">
                                 <ShoppingCart className="w-5 h-5 transition-transform group-hover:scale-110" />
