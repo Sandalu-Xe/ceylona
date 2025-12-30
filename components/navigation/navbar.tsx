@@ -27,7 +27,7 @@ const navItems: NavItem[] = [
             { label: 'Beach & Relax', href: '/experiences/beach' },
         ],
     },
-    { label: 'DESTINATIONS', href: '/destinations' },
+    { label: 'GALLERY', href: '/gallery' },
     {
         label: 'ABOUT',
         href: '/about',
