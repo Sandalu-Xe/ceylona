@@ -3,21 +3,24 @@ import Image from "next/image";
 const galleryImages = [
     // Column 1
     [
-        { src: "/images/experiences/sigiriya.jpg", alt: "Sigiriya Rock Fortress" },
-        { src: "/images/products/tent-1.jpg", alt: "Camping in Style" },
-        { src: "/images/tea.png", alt: "Tea Plantations" },
+        { src: "/images/whales.png", alt: "Whale Watching at Mirissa" },
+        { src: "/images/experiences/elephant.png", alt: "Gentle Giants" },
+        { src: "/images/tea.png", alt: "Emerald Tea Estates" },
+        { src: "/images/adventure-hero.png", alt: "Mountain Trekking" },
     ],
     // Column 2
     [
-        { src: "/images/safari.png", alt: "Safari Adventure" },
-        { src: "/images/experiences/ella.jpg", alt: "Ella Views" },
-        { src: "/images/experiences/mirissa.jpg", alt: "Coastal Beauty" },
+        { src: "/images/safari.png", alt: "Leopard Safari" },
+        { src: "/images/heritage.png", alt: "Ancient Ruins" },
+        { src: "https://images.unsplash.com/photo-1566296314736-6eaac1ca0cb9?q=80&w=800&auto=format&fit=crop", alt: "Sigiriya Rock Fortress" },
+        { src: "/images/wildlife-hero.png", alt: "Into the Wild" },
     ],
     // Column 3
     [
-        { src: "/images/hero-bg.png", alt: "Sri Lankan Landscapes" },
-        { src: "/images/experiences/yala.jpg", alt: "Yala Wildlife" },
-        { src: "/images/products/backpack-1.jpg", alt: "Adventure Gear" },
+        { src: "/images/beach.png", alt: "Golden Coastlines" },
+        { src: "/images/colombo.png", alt: "Vibrant Colombo" },
+        { src: "/images/experiences/train.png", alt: "Iconic Train Journeys" },
+        { src: "/images/cultural-hero.png", alt: "Traditional Dance" },
     ],
 ];
 

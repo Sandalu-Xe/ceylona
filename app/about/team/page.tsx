@@ -1,34 +1,42 @@
+import Image from "next/image";
+
 export default function TeamPage() {
     const team = [
         {
             name: "Sahan Perera",
             role: "Founder & CEO",
             bio: "Visionary behind Ceylona Camps, with a passion for design and exploration.",
+            image: "https://i.pravatar.cc/400?img=11"
         },
         {
             name: "Amara Silva",
             role: "Head of Experiences",
             bio: "Curating bespoke journeys that go beyond the ordinary.",
+            image: "https://i.pravatar.cc/400?img=5"
         },
         {
             name: "Kasun De Alwis",
             role: "Lead Guide",
             bio: "An encyclopedia of Sri Lankan wildlife and history.",
+            image: "https://i.pravatar.cc/400?img=3"
         },
         {
             name: "Nimali Fernando",
             role: "Sustainability Director",
             bio: "Ensuring our footprint helps nature thrive.",
+            image: "https://i.pravatar.cc/400?img=9"
         },
         {
             name: "David Ross",
             role: "Head of Operations",
             bio: "Making sure every detail of your trip is flawless.",
+            image: "https://i.pravatar.cc/400?img=60"
         },
         {
             name: "Sarah Jen",
             role: "Customer Success",
             bio: "Here to help you plan the perfect getaway.",
+            image: "https://i.pravatar.cc/400?img=44"
         },
     ];
 
@@ -46,13 +54,15 @@ export default function TeamPage() {
                     {team.map((member, index) => (
                         <div
                             key={index}
-                            className="group p-8 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-primary/50 transition-all hover:bg-black/10 dark:hover:bg-white/10"
+                            className="group p-8 rounded-2xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:border-primary/50 transition-all hover:bg-black/10 dark:hover:bg-white/10 text-center"
                         >
-                            <div className="w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl font-bold mb-6 group-hover:scale-110 transition-transform">
-                                {member.name
-                                    .split(" ")
-                                    .map((n) => n[0])
-                                    .join("")}
+                            <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary/20 group-hover:border-primary transition-all group-hover:scale-105">
+                                <Image
+                                    src={member.image}
+                                    alt={member.name}
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
                             <h3 className="text-2xl font-semibold text-foreground mb-2">{member.name}</h3>
                             <p className="text-primary font-medium mb-4">{member.role}</p>
