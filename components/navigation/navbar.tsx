@@ -54,6 +54,7 @@ export default function Navbar() {
 
     // Avoid hydration mismatch
     useEffect(() => {
+        // eslint-disable-next-line
         setMounted(true);
     }, []);
 

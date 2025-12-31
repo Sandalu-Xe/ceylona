@@ -30,14 +30,12 @@ export default function ContactPage() {
             } else {
                 setStatus('error');
             }
-        } catch (error) {
+        } catch {
             setStatus('error');
         }
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({ ...formData, [e.target.type === 'email' ? 'email' : (e.target.tagName === 'TEXTAREA' ? 'message' : 'name')]: e.target.value });
-    };
+
 
     return (
         <main className="min-h-screen bg-background flex items-center justify-center pt-24 pb-16 px-6">
@@ -47,7 +45,7 @@ export default function ContactPage() {
                     <div className="space-y-4">
                         <h1 className="text-5xl md:text-7xl font-bold text-foreground">Get in Touch</h1>
                         <p className="text-xl text-muted-foreground">
-                            Planning your dream trip? We're here to help every step of the way.
+                            Planning your dream trip? We&apos;re here to help every step of the way.
                         </p>
                     </div>
 
@@ -123,8 +121,8 @@ export default function ContactPage() {
                             type="submit"
                             disabled={status === 'loading'}
                             className={`w-full py-4 rounded-xl font-bold transition-all shadow-lg text-white ${status === 'success'
-                                    ? 'bg-green-600 hover:bg-green-700'
-                                    : 'bg-primary hover:bg-opacity-90'
+                                ? 'bg-green-600 hover:bg-green-700'
+                                : 'bg-primary hover:bg-opacity-90'
                                 } ${status === 'loading' ? 'opacity-70 cursor-not-allowed' : ''}`}
                         >
                             {status === 'loading' ? 'Sending...' : status === 'success' ? 'Message Sent!' : 'Send Message'}

@@ -85,7 +85,7 @@ export default function AboutPage() {
                 <div className="space-y-4">
                     <h2 className="text-3xl font-bold text-foreground">Why Ceylona?</h2>
                     <p className="text-muted-foreground text-lg leading-relaxed">
-                        We believe that luxury isn't just about five-star hotels—it's about access, authenticity, and attention to detail. Our team works tirelessly to open doors to experiences that few travelers get to see, ensuring your journey through Sri Lanka is as unique as you are.
+                        We believe that luxury isn&apos;t just about five-star hotels—it&apos;s about access, authenticity, and attention to detail. Our team works tirelessly to open doors to experiences that few travelers get to see, ensuring your journey through Sri Lanka is as unique as you are.
                     </p>
                 </div>
             </section>

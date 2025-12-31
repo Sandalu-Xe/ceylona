@@ -30,7 +30,7 @@ export async function POST(request: Request) {
             const fileContent = fs.readFileSync(filePath, 'utf-8');
             try {
                 messages = JSON.parse(fileContent);
-            } catch (e) {
+            } catch {
                 messages = [];
             }
         }

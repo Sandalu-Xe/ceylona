@@ -25,7 +25,7 @@ export default function StoryPage() {
                 <div className="space-y-6">
                     <h2 className="text-3xl md:text-4xl font-semibold text-foreground">The Beginning</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed">
-                        Ceylona Camps was born from a simple yet profound realization: Sri Lanka's beauty deserves to be experienced with the same elegance and attention to detail as the world's finest products. We set out to bridge the gap between rugged adventure and refined luxury, creating a travel experience that feels seamless, intuitive, and deeply moving.
+                        Ceylona Camps was born from a simple yet profound realization: Sri Lanka&apos;s beauty deserves to be experienced with the same elegance and attention to detail as the world&apos;s finest products. We set out to bridge the gap between rugged adventure and refined luxury, creating a travel experience that feels seamless, intuitive, and deeply moving.
                     </p>
                 </div>
 
@@ -41,7 +41,7 @@ export default function StoryPage() {
                     <div className="space-y-6">
                         <h2 className="text-3xl md:text-4xl font-semibold text-foreground">Our Philosophy</h2>
                         <p className="text-lg text-muted-foreground leading-relaxed">
-                            We believe in the "Apple of Travel" – a philosophy where every touchpoint is curated, every interaction is smooth, and every moment is designed to delight. From the moment you plan your trip to the final sunset, we ensure a journey that is as effortless as it is unforgettable.
+                            We believe in the &quot;Apple of Travel&quot; – a philosophy where every touchpoint is curated, every interaction is smooth, and every moment is designed to delight. From the moment you plan your trip to the final sunset, we ensure a journey that is as effortless as it is unforgettable.
                         </p>
                     </div>
                 </div>
@@ -49,7 +49,7 @@ export default function StoryPage() {
                 <div className="space-y-6 text-center">
                     <h2 className="text-3xl md:text-4xl font-semibold text-foreground">Sustainability</h2>
                     <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-                        Our love for this island runs deep. That's why we are committed to sustainable tourism practices that protect our wildlife, preserve our heritage, and uplift local communities. Every Ceylona experience is designed to leave a positive footprint.
+                        Our love for this island runs deep. That&apos;s why we are committed to sustainable tourism practices that protect our wildlife, preserve our heritage, and uplift local communities. Every Ceylona experience is designed to leave a positive footprint.
                     </p>
                 </div>
             </section>

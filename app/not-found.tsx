@@ -25,10 +25,10 @@ export default function NotFound() {
             <div className="text-center space-y-6 max-w-2xl mx-auto mt-20">
                 <h1 className="text-8xl md:text-9xl font-bold text-neutral-800 dark:text-neutral-200">404</h1>
                 <h2 className="text-2xl md:text-3xl font-light text-neutral-400">
-                    Oops! You've wandered off the beaten path.
+                    Oops! You&apos;ve wandered off the beaten path.
                 </h2>
                 <p className="text-lg text-neutral-500">
-                    Let's get you back on trail with some popular destinations.
+                    Let&apos;s get you back on trail with some popular destinations.
                 </p>
                 <Link href="/">
                     <button className="mt-4 px-8 py-3 bg-white text-black rounded-full font-medium hover:bg-neutral-200 transition-colors">

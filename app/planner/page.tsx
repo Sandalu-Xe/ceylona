@@ -42,7 +42,27 @@ export default function PlannerPage() {
     );
 }
 
-function PlannerContent({ step, setStep, viewState, setViewState, preferences, setPreferences }: any) {
+interface ViewState {
+    center: [number, number];
+    zoom: number;
+}
+
+interface Preferences {
+    duration: string;
+    interests: string[];
+    travelers: string;
+}
+
+interface PlannerContentProps {
+    step: number;
+    setStep: (step: number) => void;
+    viewState: ViewState;
+    setViewState: (viewState: ViewState) => void;
+    preferences: Preferences;
+    setPreferences: React.Dispatch<React.SetStateAction<Preferences>>;
+}
+
+function PlannerContent({ step, setStep, viewState, setViewState, preferences, setPreferences }: PlannerContentProps) {
     const searchParams = useSearchParams();
 
     useEffect(() => {
@@ -56,7 +76,7 @@ function PlannerContent({ step, setStep, viewState, setViewState, preferences, s
             };
             const interest = interestMap[theme];
             if (interest && !preferences.interests.includes(interest)) {
-                setPreferences((prev: any) => ({
+                setPreferences((prev) => ({
                     ...prev,
                     interests: [...prev.interests, interest]
                 }));
@@ -64,7 +84,7 @@ function PlannerContent({ step, setStep, viewState, setViewState, preferences, s
                 setStep(2);
             }
         }
-    }, [searchParams]);
+    }, [searchParams, preferences.interests, setPreferences, setStep]);
 
     const handleNext = () => {
         setStep(step + 1);
@@ -104,7 +124,7 @@ function PlannerContent({ step, setStep, viewState, setViewState, preferences, s
                                     className="w-full p-4 rounded-xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
                                     placeholder="e.g., 7"
                                     value={preferences.duration}
-                                    onChange={(e: any) => setPreferences({ ...preferences, duration: e.target.value })}
+                                    onChange={(e) => setPreferences({ ...preferences, duration: e.target.value })}
                                 />
                             </motion.div>
                         )}

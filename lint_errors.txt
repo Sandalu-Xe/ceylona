@@ -1,0 +1,57 @@
+
+> ceylona-camps@0.1.0 lint
+> eslint
+
+
+/Users/sandaluthushan/Downloads/Ceylon Camps/ceylona Website/ceylona-camps/app/about/contact/page.tsx
+  33:18  warning  'error' is defined but never used                                @typescript-eslint/no-unused-vars
+  38:11  warning  'handleChange' is assigned a value but never used                @typescript-eslint/no-unused-vars
+  50:57  error    `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/sandaluthushan/Downloads/Ceylon Camps/ceylona Website/ceylona-camps/app/about/page.tsx
+  88:51  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  88:84  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/sandaluthushan/Downloads/Ceylon Camps/ceylona Website/ceylona-camps/app/about/story/page.tsx
+  28:97   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  28:193  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  44:47   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  44:63   error  `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`  react/no-unescaped-entities
+  52:65   error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/sandaluthushan/Downloads/Ceylon Camps/ceylona Website/ceylona-camps/app/api/contact/route.ts
+  33:22  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+/Users/sandaluthushan/Downloads/Ceylon Camps/ceylona Website/ceylona-camps/app/not-found.tsx
+  28:30  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+  31:24  error  `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`  react/no-unescaped-entities
+
+/Users/sandaluthushan/Downloads/Ceylon Camps/ceylona Website/ceylona-camps/app/planner/page.tsx
+   45:98  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+   59:39  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+   67:8   warning  React Hook useEffect has missing dependencies: 'preferences.interests', 'setPreferences', and 'setStep'. Either include them or remove the dependency array. If 'setPreferences' changes too often, find the parent component that defines it and wrap that definition in useCallback  react-hooks/exhaustive-deps
+  107:51  error    Unexpected any. Specify a different type                                                                                                                                                                                                                                               @typescript-eslint/no-explicit-any
+
+/Users/sandaluthushan/Downloads/Ceylon Camps/ceylona Website/ceylona-camps/components/navigation/navbar.tsx
+  57:9  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/Users/sandaluthushan/Downloads/Ceylon Camps/ceylona Website/ceylona-camps/components/navigation/navbar.tsx:57:9
+  55 |     // Avoid hydration mismatch
+  56 |     useEffect(() => {
+> 57 |         setMounted(true);
+     |         ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  58 |     }, []);
+  59 |
+  60 |     return (  react-hooks/set-state-in-effect
+
+/Users/sandaluthushan/Downloads/Ceylon Camps/ceylona Website/ceylona-camps/components/ui/whatsapp-button.tsx
+  3:10  warning  'MessageCircle' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 19 problems (14 errors, 5 warnings)
+
