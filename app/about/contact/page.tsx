@@ -14,25 +14,12 @@ export default function ContactPage() {
         e.preventDefault();
         setStatus('loading');
 
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                setStatus('success');
-                setFormData({ name: '', email: '', message: '' });
-                setTimeout(() => setStatus('idle'), 3000);
-            } else {
-                setStatus('error');
-            }
-        } catch {
-            setStatus('error');
-        }
+        // Simulate network delay
+        setTimeout(() => {
+            setStatus('success');
+            setFormData({ name: '', email: '', message: '' });
+            setTimeout(() => setStatus('idle'), 3000);
+        }, 1500);
     };
 
 
